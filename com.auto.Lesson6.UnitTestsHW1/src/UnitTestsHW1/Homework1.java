@@ -48,19 +48,15 @@ for(int i=0 ; i <=array.size()-1; i++){
 //4 What the first number we met: positive or negative?
 
 ArrayList <Integer>  arrayPosOrNeg = (ArrayList<Integer>) Arrays.asList(1,4,0,-3,0,-5,0);
-public static String isPositiveOrNegative(ArrayList <Integer> arrayPosOrNeg, String message){
-for (int i = 0; i < arrayPosOrNeg.size(); i++) {
-  if(arrayPosOrNeg.get(i) > 0){
-    message = "the positive first";
-    break;
+public static String isPositiveOrNegative(ArrayList <Integer> arrayPosOrNeg){
+  if(arrayPosOrNeg.get(0) > 0){
+    return "the positive first";
   }
-  else if (arrayPosOrNeg.get(i)<0){
-	message = "the nevative first";
-    break;
+
+return "the nevative first";
+
   }
-  }
-return message; 
-}
+
 
 //5 Is the array ordered by ASC rule?
 
@@ -82,14 +78,17 @@ return sortingRule;
 ArrayList <Integer>  arrayWithNumbers = (ArrayList<Integer>) Arrays.asList(1,4,-2,3,7,5,13);
 ArrayList <Integer>  arrayWithEvenNumbers = new ArrayList<Integer>();
 
-public static ArrayList<Integer> newArrayWithEvenNumbers(ArrayList <Integer> arrayWithNumbers, ArrayList <Integer> arrayWithEvenNumbers, String isEvenNumersMessage){
-    for (int i = 0; i < arrayWithNumbers.size(); i++) {
+public static Object newArrayWithEvenNumbers(ArrayList <Integer> arrayWithNumbers, ArrayList <Integer> arrayWithEvenNumbers, String isEvenNumersMessage){
+	int countOfEven = 0;
+	for (int i = 0; i < arrayWithNumbers.size(); i++) {
       if(arrayWithNumbers.get(i)%2==0){
     	  arrayWithEvenNumbers.add(arrayWithNumbers.get(i));
+    	  countOfEven++;
       }
-        else
+	}
+	 if(countOfEven==0){
           isEvenNumersMessage= "there is no even numbers in array"; 
-          break;
+          return isEvenNumersMessage;
           }
       return arrayWithEvenNumbers;        
         }    
@@ -110,7 +109,7 @@ return  arrayWithElementsMoreZ;
 //8 Count positive, negative array elements and count of zeros
 
 ArrayList <Integer>  arrayCountOfPosNeg= (ArrayList<Integer>) Arrays.asList(0,1,4,0,-3,0,-5,-1);
-public static int countOfElements(ArrayList <Integer> arrayCountOfPosNeg){
+public static ArrayList <Integer> countOfElements(ArrayList <Integer> arrayCountOfPosNeg){
 int countPositive = 0;
 int countNegative = 0;
 int countZeros = 0;
@@ -125,7 +124,8 @@ for (int i = 0; i < arrayCountOfPosNeg.size(); i++) {
     countZeros++; 
   } 
 }
-return countPositive;
+ArrayList <Integer>  arrayCountPosNegZeros= (ArrayList<Integer>) Arrays.asList(countPositive,  countNegative, countZeros);
+return arrayCountPosNegZeros;
 }
 
 //9 Switch Min and Max array elements
