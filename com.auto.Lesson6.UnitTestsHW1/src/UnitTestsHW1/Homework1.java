@@ -61,24 +61,18 @@ return "the nevative first";
 //5 Is the array ordered by ASC rule?
 
 ArrayList <Integer>  arrayHowOrdered = (ArrayList<Integer>) Arrays.asList(1,4,2,-3,0,-5,11);
-public static String isArrayOrdered(ArrayList <Integer> arrayHowOrdered, String sortingRule){
-for (int i = 0; i < arrayHowOrdered.size(); i++) {
-  if(arrayHowOrdered.get(i) > arrayHowOrdered.get(i+1)){
-	  sortingRule = "array isn't ordered by asc rule";
-    break;
+public static String isArrayOrdered(ArrayList <Integer> arrayHowOrdered){
+  if(arrayHowOrdered.get(0) > arrayHowOrdered.get(1)){
+	return "array isn't ordered by asc rule";
   }
-  else 
-	 sortingRule = "array is ordered by asc rule";
-	break;  
- } 
-return sortingRule;
+return "array is ordered by asc rule";
 }
 
 //6 Is array contain even numbers? If no - print the message
 ArrayList <Integer>  arrayWithNumbers = (ArrayList<Integer>) Arrays.asList(1,4,-2,3,7,5,13);
 ArrayList <Integer>  arrayWithEvenNumbers = new ArrayList<Integer>();
 
-public static Object newArrayWithEvenNumbers(ArrayList <Integer> arrayWithNumbers, ArrayList <Integer> arrayWithEvenNumbers, String isEvenNumersMessage){
+public static Object newArrayWithEvenNumbers(ArrayList <Integer> arrayWithNumbers, ArrayList <Integer> arrayWithEvenNumbers){
 	int countOfEven = 0;
 	for (int i = 0; i < arrayWithNumbers.size(); i++) {
       if(arrayWithNumbers.get(i)%2==0){
@@ -87,7 +81,7 @@ public static Object newArrayWithEvenNumbers(ArrayList <Integer> arrayWithNumber
       }
 	}
 	 if(countOfEven==0){
-          isEvenNumersMessage= "there is no even numbers in array"; 
+          String isEvenNumersMessage= "there is no even numbers in array"; 
           return isEvenNumersMessage;
           }
       return arrayWithEvenNumbers;        

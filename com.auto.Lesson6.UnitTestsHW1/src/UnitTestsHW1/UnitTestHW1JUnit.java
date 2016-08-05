@@ -47,5 +47,13 @@ public class UnitTestHW1JUnit {
 		Assert.assertEquals (expected, actual);
 		}
 	
+	@Test 
+	public void testIsArrayOrdered() {
+		ArrayList <Integer>  arrayHowOrdered = (ArrayList<Integer>) Arrays.asList(1,4,2,-3,0,-5,11);
+		String actual = Homework1.isArrayOrdered(arrayHowOrdered);
+		String expected = "array is ordered by asc rule";
+			
+		Assert.assertEquals (expected, actual);
+		}
 	
 }
